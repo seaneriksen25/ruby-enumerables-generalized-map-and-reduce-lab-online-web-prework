@@ -2,7 +2,6 @@
 
 method_using_block { puts "hi" }
  
-# Is the same as...
 method_using_block do
   puts "hi"
 end
@@ -11,9 +10,6 @@ end
 def make_sandwich(element1, element2)
 end
  
-make_sandwich("Peanut Butter", "Yakisoba")
-
-
 def make_sandwich(element1, element2)
   base = "A #{element1} and #{element2}"
   puts base
@@ -21,17 +17,17 @@ def make_sandwich(element1, element2)
   base
 end
  
- 
-make_sandwich("chicken", "a sense of malaise") do |innards|
-  puts "making some tasty stuff..."
-end
 
 def make_sandwich(element1, element2)
   base = "A #{element1} and #{element2}"
   yield(base)
 end
  
-make_sandwich("gator", "gumbo") do |innards|
-  "#{innards} on rye"
+
+def make_sandwich(element1, element2)
+  yield("A #{element1} and #{element2} sandwich")
 end
+ 
+
+
 
